@@ -45,6 +45,6 @@ public class tryMd5 {
     }
    
     public static void main(String[] args) throws SQLException {
-        insertSql(10000);
+        insertSql(100000);
     }
 }
