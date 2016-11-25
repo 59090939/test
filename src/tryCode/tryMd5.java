@@ -33,18 +33,18 @@ public class tryMd5 {
     }
 
     static void insertSql(int number) throws SQLException {
-        String user = "root";
-        String secret = "222222";
-        String url = "jdbc:mysql://192.168.190.160:3306/try";
+        String user = "iniot";
+        String secret = "iniot";
+        String url = "jdbc:mysql://192.168.190.168:8066/test";
         Connection conn = DriverManager.getConnection(url, user, secret);
- for(int i = 0; i < number; ++i){
-            String sql = "insert into MD5_5 (md5) values (\"" + getMD5(32) + "\");";
+        for(int i = 0; i < number; ++i){
+            String sql = "insert into md5(md5) values (\"" + getMD5(32) + "\");";
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.executeUpdate();
         }
     }
    
     public static void main(String[] args) throws SQLException {
-        insertSql(100000);
+        insertSql(2000);
     }
 }
